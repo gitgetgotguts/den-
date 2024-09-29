@@ -1,9 +1,9 @@
 # request the data from the api and writing it a json file
-
+from config import apikey
 import requests
 import json
 
-apikey='eb27b735b87048e1b218d9ad9759b7c5'
+
 def req_by_ingredients(ingredients,num_of_recipes,apikey,minimize_missing=0,ignore_typ=True):
     minimize_missing+=1
     url = 'https://api.spoonacular.com/recipes/findByIngredients'
@@ -30,12 +30,12 @@ def req_by_ingredients(ingredients,num_of_recipes,apikey,minimize_missing=0,igno
 
 
 
-data=req_by_ingredients(['milk','eggs'],2,apikey)
-# data is a list of dicts containing products
+# data=req_by_ingredients(['milk','eggs'],2,apikey)
+# # data is a list of dicts containing products
 
-file_name='out.json'
-with open(file_name, 'w') as json_file:
-    json.dump(data, json_file, indent=4)
+# file_name='out.json'
+# with open(file_name, 'w') as json_file:
+#     json.dump(data, json_file, indent=4)
 
 
 
